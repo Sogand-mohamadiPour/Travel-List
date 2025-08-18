@@ -7,12 +7,17 @@ const initialItems = [
 ];
 
 export default function App() {
+  const [items, setItems] = useState([]);
+  function handleAddItems(item) {
+    setItems(items => [...items, item])
+  }
+
   return (
     <>
       <div className="app">
         <Logo />
-        <Form />
-        <PackingList />
+        <Form onAddItems={handleAddItems} />
+        <PackingList items={items} />
         <Stats />
       </div>
     </>
@@ -27,21 +32,27 @@ function Logo() {
   )
 }
 
-function Form() {
+function Form({ onAddItems }) {
   const [description, setDescriotion] = useState("");
   const [quantity, setQuantity] = useState(1);
+
+
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (!description) return;
 
-    const newItem ={description, quantity, 
-      packed: false , id:Date.now()}
-      console.log(newItem);
+    const newItem = {
+      description , quantity,
+      packed: false, id: Date.now()
+    }
+    console.log(newItem);
 
-      setDescriotion('');
-      setQuantity(0);
+    onAddItems(newItem)
+
+    setDescriotion('');
+    setQuantity(1);
   }
 
   return (
@@ -65,12 +76,12 @@ function Form() {
   )
 }
 
-function PackingList() {
+function PackingList({ items }) {
   return (
     <>
       <div className="list">
         <ul>
-          {initialItems.map(item => <Item key={item.id} item={item} />)}
+          {items.map(item => <Item key={item.id} item={item} />)}
         </ul>
       </div>
     </>
@@ -82,8 +93,7 @@ function Item({ item }) {
     <>
       <li>
         <span style={item.packed ? { textDecoration: 'line-through' } : {}}>
-          {item.description}
-          {item.quantity}
+          {item.description} {item.quantity}
         </span>
         <button>❌</button>
       </li>
