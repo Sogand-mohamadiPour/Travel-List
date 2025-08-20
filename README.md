@@ -10,6 +10,9 @@ Add the items you need, check them off as you pack, and see your packing progres
 - Built with **Create React App**
 - Responsive and easy to use
 
+## 🚀 Live Demo  
+👉 [travel-list-vert-nu.vercel.app](https://travel-list-vert-nu.vercel.app)
+
 ## 🛠️ Technologies Used
 - React (Create React App)
 - HTML5 & CSS3
