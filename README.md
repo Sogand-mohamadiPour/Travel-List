@@ -10,9 +10,6 @@ Add the items you need, check them off as you pack, and see your packing progres
 - Built with **Create React App**
 - Responsive and easy to use
 
-## 🚀 Live Demo
-[View on GitHub Pages](https://sogand-mohamadipour.github.io/Travel-List/)
-
 ## 🛠️ Technologies Used
 - React (Create React App)
 - HTML5 & CSS3
