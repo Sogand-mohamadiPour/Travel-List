@@ -91,7 +91,7 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
   if (sortBy === "input") sorted = items;
   if (sortBy === "description")
     sorted = items
-      .slice().sort((a, b) => a.description.localComplare(b.description));
+      .slice().sort((a, b) => a.description.localeCompare(b.description));
 
   if (sortBy === "packed")
     sorted = items.slice()
